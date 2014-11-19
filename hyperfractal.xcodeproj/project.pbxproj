@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		18A98DAA1A1C75A900BCFB1E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		18A98D9F1A1C6FEC00BCFB1E = {
 			isa = PBXGroup;
 			children = (
+				18A98DAA1A1C75A900BCFB1E /* main.cpp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -23,6 +28,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/catenary/Documents/hyperfractal;
 			dependencies = (
 			);
 			name = hyperfractal;
@@ -174,6 +180,7 @@
 				18A98DA91A1C6FEC00BCFB1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
