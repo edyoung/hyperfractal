@@ -21,7 +21,7 @@ lexer.o : lexer.cpp
 .cpp.o:
 	$(CPP) $(CXXFLAGS) -c $<
 
-lexer.cpp Scannerbase.h Scanner.h: lexer.lpp
+lexer.cpp Scannerbase.h: lexer.lpp
 	flexc++ --lex-source=lexer.cpp --case-insensitive $<
 
 clean:
