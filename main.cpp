@@ -14,7 +14,7 @@ int main()
 {
     std::cout << "hello\n";
 
-    Scanner scanner;
+    Scanner scanner("formulas/gf4d.frm","-");
     while(scanner.lex())
     {
 	std::cout << scanner.matched() << std::endl;
