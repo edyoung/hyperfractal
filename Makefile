@@ -7,16 +7,21 @@ BASECXXFLAGS= -std=c++11 -g -fPIC -DNDEBUG -D_GNU_SOURCE -D__STDC_CONSTANT_MACRO
 CXXFLAGS=  $(BASECXXFLAGS)  -I`$(LLVM_CONFIG) --includedir`
 LDFLAGS=`$(LLVM_CONFIG) --ldflags` 
 LIBS=`$(LLVM_CONFIG) --libs --system-libs`
-OBJS=main.o lexer.o
+OBJS=lexer.o
 CPP=clang++
 
 .SUFFIXES : .o .cpp
 
-hyperfractal: $(OBJS)
-	$(CPP) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
+all: hyperfractal tests
+
+hyperfractal: $(OBJS) main.o
+	$(CPP) $(LDFLAGS) $^ -o $@ $(LIBS)
+
+tests: $(OBJS) test.o
+	$(CPP) $(LDFLAGS) $^ -o $@ $(LIBS)
 
 lexer.o : lexer.cpp
-	$(CPP) $(BASECXXFLAGS) -c $<
+	$(CPP) $(BASECXXFLAGS) -c $^
 
 .cpp.o:
 	$(CPP) $(CXXFLAGS) -c $<
