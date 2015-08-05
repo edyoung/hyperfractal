@@ -29,6 +29,10 @@
 
 hyperfractal
 
+#generated source files
+lexer.cpp
+Scannerbase.h
+
 #XCode
 .DS_Store
 build/
