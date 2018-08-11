@@ -2,9 +2,7 @@
 
 #include "LibFractal.h"
 
-TEST(TestCaseName, CallExportedFunction) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+TEST(BasicTests, CallExportedFunction) {
   EXPECT_EQ(2, functionToTest(1));
 }
 
