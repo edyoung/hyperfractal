@@ -66,3 +66,8 @@ DerivedData
 *.deps
 *.idb
 *.pdb
+/packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0
+/x64/Debug/tests.ilk
+/x64/Debug/tests.exe.gta.testdurations
+/x64/Debug/LibFractal.ilk
+/x64/Debug/LibFractal.exp
