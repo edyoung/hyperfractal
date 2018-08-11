@@ -62,3 +62,7 @@ DerivedData
 /bin/win64/Debug/HyperFractal.exp
 *.tlog
 *.log
+*.cache
+*.deps
+*.idb
+*.pdb
