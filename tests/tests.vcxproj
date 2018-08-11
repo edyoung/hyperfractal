@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <CUDAPropsPath Condition="'$(CUDAPropsPath)'==''">$(VCTargetsPath)\BuildCustomizations</CUDAPropsPath>
@@ -14,8 +14,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BF191F01-D838-42C8-BD2C-822E22FD4FFB}</ProjectGuid>
-    <ProjectName>HyperFractal</ProjectName>
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{2D4EBF73-9CC6-4E28-8C33-C7078CC32624}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>tests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -55,12 +59,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>./;$(CudaToolkitDir)/include;../../common/inc;nvidia_samples/inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;$(CudaToolkitDir)/include;../../common/inc;../nvidia_samples/inc;$(VCInstallDir)UnitTest\include;../</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>cudart_static.lib;freeglut.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(CudaToolkitLibDir);../../common/lib/$(PlatformName);nvidia_samples/lib/$(PlatformName)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(CudaToolkitLibDir);../../common/lib/$(PlatformName);../nvidia_samples/lib/$(PlatformName);$(VCInstallDir)UnitTest\lib</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)/HyperFractal.exe</OutputFile>
     </Link>
     <CudaCompile>
@@ -109,15 +113,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Mandelbrot.cpp" />
-    <ClCompile Include="Mandelbrot_gold.cpp" />
-    <CudaCompile Include="Mandelbrot_cuda.cu" />
-    <None Include="Mandelbrot_kernel.cuh" />
-    <ClInclude Include="Mandelbrot.h" />
-    <ClInclude Include="Mandelbrot_gold.h" />
-    <ClInclude Include="Mandelbrot_kernel.h" />
-    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Mandelbrot.cpp" />
+    <ClCompile Include="..\Mandelbrot_gold.cpp" />
+    <CudaCompile Include="..\Mandelbrot_cuda.cu" />
+    <None Include="..\Mandelbrot_kernel.cuh" />
+    <ClInclude Include="..\Mandelbrot.h" />
+    <ClInclude Include="..\Mandelbrot_gold.h" />
+    <ClInclude Include="..\Mandelbrot_kernel.h" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="unittest1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\hyperfractal.vcxproj">
+      <Project>{bf191f01-d838-42c8-bd2c-822e22fd4ffb}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

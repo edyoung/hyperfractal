@@ -18,6 +18,8 @@
     CUDA 2.2 SDK - updated with drawing of Julia sets by Konstantin Kolchin, NVIDIA
 */
 
+#include "stdafx.h"
+
 // OpenGL Graphics includes
 #include <helper_gl.h>
 #if defined(WIN32) || defined(_WIN32) || defined(WIN64) || defined(_WIN64)
