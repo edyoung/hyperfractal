@@ -1,10 +1,7 @@
-#include <iostream>
+#include "Stdafx.h"
 
-
-
-int notmain()
+int main(int argc, char **argv)
 {
-    std::cout << "hello\n";
-
-	return 0;
+	return xmain(argc, argv);
 }
+
