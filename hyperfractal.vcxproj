@@ -48,6 +48,9 @@
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin/win64/$(Configuration)/</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -111,7 +114,7 @@
     <ClCompile Include="Mandelbrot_gold.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mandelbrot_cuda.cu" />
+    <CudaCompile Include="Mandelbrot_cuda.cu" />
     <None Include="Mandelbrot_kernel.cuh" />
   </ItemGroup>
   <ItemGroup>
@@ -120,5 +123,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(CUDAPropsPath)\CUDA 9.2.targets" />
   </ImportGroup>
 </Project>

@@ -57,3 +57,8 @@ DerivedData
 /Debug/hyperfractal.log
 /Debug/hyperfractal.ilk
 /hyperfractal.vcxproj.user
+/bin/win64/Debug/HyperFractal.pdb
+/bin/win64/Debug/HyperFractal.ilk
+/bin/win64/Debug/HyperFractal.exp
+*.tlog
+*.log
