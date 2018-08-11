@@ -71,3 +71,9 @@ DerivedData
 /x64/Debug/tests.exe.gta.testdurations
 /x64/Debug/LibFractal.ilk
 /x64/Debug/LibFractal.exp
+*.exp
+*.ilk
+*.testdurations
+*.swp
+*~
+*.CopyComplete

@@ -9,6 +9,7 @@
  *
  */
 
+#include "Stdafx.h"
 #include "Mandelbrot_gold.h"
 
 #define ABS(n) ((n) < 0 ? -(n) : (n))

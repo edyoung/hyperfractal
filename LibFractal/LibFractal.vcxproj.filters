@@ -24,6 +24,18 @@
     <ClInclude Include="LibFractal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Mandelbrot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mandelbrot_kernel.cuh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mandelbrot_kernel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mandelbrot_gold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -35,5 +47,16 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Mandelbrot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Mandelbrot_gold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\Mandelbrot_cuda.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

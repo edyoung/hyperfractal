@@ -198,7 +198,7 @@ void computeFPS()
         glutSetWindowTitle(fps);
         fpsCount = 0;
 
-        fpsLimit = MAX(1.f, (float)ifps);
+        fpsLimit = static_cast<int>(MAX(1.f, (float)ifps));
         sdkResetTimer(&hTimer);
     }
 }
@@ -1202,7 +1202,7 @@ void printHelp()
 ////////////////////////////////////////////////////////////////////////////////
 // Main program
 ////////////////////////////////////////////////////////////////////////////////
-int xmain(int argc, char **argv)
+__declspec(dllexport) int xmain(int argc, char **argv)
 {
     pArgc = &argc;
     pArgv = argv;
@@ -1336,5 +1336,7 @@ int xmain(int argc, char **argv)
 #endif
 
     glutMainLoop();
+	return 0;
+
 } // main
 

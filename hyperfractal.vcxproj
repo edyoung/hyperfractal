@@ -48,7 +48,7 @@
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <PropertyGroup>
     <OutDir>$(SolutionDir)bin/win64/$(Configuration)/</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -110,14 +110,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Mandelbrot.cpp" />
-    <ClCompile Include="Mandelbrot_gold.cpp" />
-    <CudaCompile Include="Mandelbrot_cuda.cu" />
-    <None Include="Mandelbrot_kernel.cuh" />
-    <ClInclude Include="Mandelbrot.h" />
-    <ClInclude Include="Mandelbrot_gold.h" />
-    <ClInclude Include="Mandelbrot_kernel.h" />
     <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="LibFractal\LibFractal.vcxproj">
+      <Project>{d505e41d-d4f4-4270-b4db-5754310c5cd5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
