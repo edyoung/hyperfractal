@@ -1,0 +1,5 @@
+﻿  main.cpp
+     Creating library C:\Users\edwin\Source\Repos\hyperfractal\x64\Debug\HyperFractal.lib and object C:\Users\edwin\Source\Repos\hyperfractal\x64\Debug\HyperFractal.exp
+Mandelbrot.obj : error LNK2019: unresolved external symbol RunMandelbrot0 referenced in function "void __cdecl renderImage(bool,bool,int)" (?renderImage@@YAX_N0H@Z)
+Mandelbrot.obj : error LNK2019: unresolved external symbol RunMandelbrot1 referenced in function "void __cdecl renderImage(bool,bool,int)" (?renderImage@@YAX_N0H@Z)
+C:\Users\edwin\Source\Repos\hyperfractal\x64\Debug\/HyperFractal.exe : fatal error LNK1120: 2 unresolved externals

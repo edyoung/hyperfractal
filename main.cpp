@@ -2,9 +2,9 @@
 
 
 
-int main()
+int notmain()
 {
     std::cout << "hello\n";
 
-    
+	return 0;
 }
