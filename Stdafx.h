@@ -1,3 +1,3 @@
 #pragma once
 
-#include "Mandelbrot.h"
+#include "libfractal/libfractal.h"

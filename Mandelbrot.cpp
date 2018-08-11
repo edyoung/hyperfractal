@@ -1141,7 +1141,7 @@ int runSingleTest(int argc, char **argv)
 }
 
 //Performance Test
-void runBenchmark(int argc, char **argv)
+int runBenchmark(int argc, char **argv)
 {
     int N = 1000;
     // initialize Data for CUDA
@@ -1186,6 +1186,8 @@ void runBenchmark(int argc, char **argv)
 
     checkCudaErrors(cudaFree(d_dst));
     sdkDeleteTimer(&kernel_timer);
+
+	return 0;
 }
 
 void printHelp()
